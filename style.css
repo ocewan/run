@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Source Sans 3';
+    src: url(./fonts/SourceSans3-VariableFont_wght.ttf);
+    font-style: light;
+    font-weight: light;
+}
+
+/* ********Style général******* */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+    color: rgb(48, 48, 48);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+p {
+    margin: 30px 0;
+    line-height: 35px;
+}
+
+li {
+    list-style: none;
+}
+
+.button {
+    cursor: pointer;
+    background: transparent;
+    border-radius: 40px;
+    border: 1px solid rgb(185, 183, 183);
+    padding: 10px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font: 700 0.75rem "Source Sans 3";
+}
+
+.button:hover {
+    background: rgba(202, 202, 202, 0.555);
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: rgb(98, 98, 255);
+    transition: 0.3s;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px;
+}
+
+.section-1,
+.section-2,
+.contact {
+    box-shadow: inset 0 1px 0 rgba(112, 112, 112, 0.096);
+}
+
+/* ****Style du header**** */
+
+header {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.img-header {
+    background: url(./img/banner.jpg) fixed right/cover;
+}
+
+/* *******Style de la section-1****** */
+
+.section-1 {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.section-1 .img {
+    background: url(./img/img-left.jpg) center/cover;
+}
+
+/* *******Style de la section-2****** */
+
+.section-2 {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    min-height: 400px;
+}
+
+.section-2 .img {
+    background: url(./img/img-right.jpg) center/cover;
+}
+
+/* *********Style du formulaire********* */
+
+.contact {
+    text-align: center;
+    padding: 50px 0;
+}
+
+form {
+    width: 60%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 224px;
+    grid-template-areas:
+        "input1 input2"
+        "textarea textarea";
+    gap: 10px;
+}
+
+label {
+    text-align: center;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+    margin: 20px 0 30px;
+    padding: 10px;
+    font-size: 1.1rem;
+    width: 100%;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border: 2px solid rgb(98, 98, 255);
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+.msg {
+    grid-area: textarea;
+}
+
+/* Style du footer */
+
+.logo-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.logo-container::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 95%;
+    height: 1px;
+    background: rgba(112, 112, 112, 0.096);
+}
+
+.logos ul {
+    width: 33%;
+    min-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.logos a {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid rgba(112, 112, 112, 0.377);
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* ******** media query ********* */
+
+@media screen and (max-width: 670px) {
+    p {
+        font-size: 0.8rem;
+    }
+
+    header,
+    .section-1,
+    .section-2 {
+        display: block;
+    }
+
+    .img-header {
+        height: 50vh;
+    }
+
+    .section-1 .img,
+    .section-2 .img {
+        display: none;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .logos ul {
+        min-width: 200px;
+    }
+
+    .logos a {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logos i {
+        font-size: 0.8rem;
+    }
+}
